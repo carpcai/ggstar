@@ -1,0 +1,29 @@
+<!-- 弹出窗口 -->
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public/head" headname="介绍"/>
+<include file="Public/js"/>
+</head>
+<body>
+<div data-role="page" id="page" data-overlay-theme="e">
+  <div data-role="header" data-theme="b">
+    <h1>简介</h1>
+  </div>
+  <div data-role="content" data-theme="b" width="100%">
+    <h3 style="text-align:center">{$data_player.name}</h3>
+	<img src="__PUBLIC__/images/biglogo/{$data_player.voter_id}.jpg" width="98%" />
+    <pre style="white-space: pre-wrap;"><p style="text-shadow: 0 0;text-indent: 2em;font-size:1.3em;WORD-BREAK: break-all">{$data_player.introduce}
+  </p></pre>
+  <br/>
+  <!--<p style="text-align:right">主办单位：{$data_player.hostnit}</p>
+  <p style="text-align:right">承办单位：{$data_player.organizers}</p>-->
+    <a data-role="button" data-rel="back" data-theme="d">返回</a>
+  </div>
+
+  <div data-role="footer" data-theme="b">
+    <h1>共青团东莞理工学院委员会</h1>
+  </div>
+</div>
+</body>
+</html>

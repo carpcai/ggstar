@@ -1,0 +1,3 @@
+<?php
+//000000000010a:4:{i:0;a:5:{s:2:"id";s:1:"1";s:8:"voter_id";s:3:"101";s:4:"name";s:10:"陈冠豪 ";s:11:"voter_group";s:1:"1";s:5:"count";s:1:"5";}i:1;a:5:{s:2:"id";s:1:"2";s:8:"voter_id";s:3:"102";s:4:"name";s:9:"陈金露";s:11:"voter_group";s:1:"1";s:5:"count";s:1:"0";}i:2;a:5:{s:2:"id";s:1:"3";s:8:"voter_id";s:3:"103";s:4:"name";s:7:"梁倩 ";s:11:"voter_group";s:1:"1";s:5:"count";s:1:"0";}i:3;a:5:{s:2:"id";s:1:"4";s:8:"voter_id";s:3:"104";s:4:"name";s:10:"钟健棚 ";s:11:"voter_group";s:1:"1";s:5:"count";s:1:"0";}}
+?>

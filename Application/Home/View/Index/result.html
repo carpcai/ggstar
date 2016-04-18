@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public/head" headname="加载中"/>
+<include file="Public/js"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/progress_bar.css" />
+</head>
+<body>
+	<!-- 第一页 -->
+  <include file="Index/project"/>
+
+	<!-- 第二页 -->
+	<div data-role="page" id="pagetwo" data-theme="e">
+	<include file="Public/navbar" navname="投票结果"/>
+	  <br /><br />
+    <div data-role="content">
+      <php>$count=0;$themeid='d';</php>
+      <volist name="list" id="vo">
+      <ul data-role="listview" data-inset="true" data-theme="c">
+      <li data-role="list-divider" data-theme="{$themeid}">{$groupname[$count].group}</li>
+      <volist name="vo" id="data" mod="3">
+      <eq name="mod" value="1"><li>
+        <a><img src="__PUBLIC__/images/logo/{$data.voter_id}.jpg">{$data.name}<div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: {$data['count']/50+10}%">
+            {$data.count}
+          </div>
+        </div></a>
+      </li></eq>
+      <eq name="mod" value="2">
+        <li>
+        <a><img src="__PUBLIC__/images/logo/{$data.voter_id}.jpg">{$data.name}<div class="progress">
+          <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" style="width: {$data['count']/50+10}%">
+            {$data.count}
+          </div>
+        </div></a>
+      </li></eq>
+      <eq name="mod" value="0">
+        <li>
+          <a><img src="__PUBLIC__/images/logo/{$data.voter_id}.jpg">{$data.name}<div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" style="width: {$data['count']/50+10}%">
+              {$data.count}
+            </div>
+          </div></a>
+        </li></eq>
+      </volist>
+    </ul>
+    <php>$count++;$themeid++;</php>
+    </volist>
+    <br /><br /><br />
+	<include file="Public/support"/>
+	</div>
+	<include file="Public/footer" footbut="2"/>
+  </div>
+
+	<!-- 第三页 -->
+	<include file="Index/rule"/>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!-- 第一页 -->
+<div data-role="page" id="pageone" data-theme="d">
+  <include file="Public/navbar" navname="莞工之星"/>
+  <br /><br />
+  <div data-role="content">
+    <img src="__PUBLIC__/images/home1.jpg" width=100% />
+<php>$count=0;$themeid='d';</php>
+<volist name="list" id="vo">
+    <fieldset data-role="collapsible" data-theme="{$themeid}">
+  <legend>{$groupname[$count].group}</legend>
+  <div class="ui-grid-a ui-title">
+  <volist name="vo" id="data" mod="2">
+  <eq name="mod" value="0">
+    <div class="ui-block-a"><a href="{:U(\'Index/introduce\',\'voter_id=\'.$data[voter_id])}" data-rel="dialog"><img src="__PUBLIC__/images/logo/{$data.voter_id}.jpg" width=95% />{$data.name}<br /></a></div></eq>
+  <eq name="mod" value="1">
+    <div class="ui-block-b"><a href="{:U(\'Index/introduce\',\'voter_id=\'.$data[voter_id])}" data-rel="dialog"><img src="__PUBLIC__/images/logo/{$data.voter_id}.jpg" width=95% />{$data.name}<br /></a></div></eq>
+  </volist>
+    </div><!-- /grid-b -->
+  </fieldset>
+  <php>$count++;$themeid++;</php>
+  <br />
+  </volist>
+  <br /><br /><br />
+  <include file="Public/support"/>
+</div>
+<include file="Public/footer" footbut="1"/>
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public/head" headname="加载中"/>
+<include file="Public/js"/>
+</head>
+<body>
+	<!-- 第一页 -->
+  <include file="Index/project"/>
+
+	<!-- 第二页 -->
+	<div data-role="page" id="pagetwo" data-theme="e">
+	<include file="Public/navbar" navname="投票"/>
+	  <br /><br />
+    <div data-role="content">
+	  <form method="post" action="{:U(\'Index/voting\')}" id="twform" data-ajax="false">
+	  <php>$count=0;$themeid='d';</php>
+	  <volist name="list" id="vo">
+	    <br/>
+		<fieldset data-role="collapsible" data-theme="{$themeid}">
+		<legend>{$groupname[$count].group}</legend>
+		<volist name="vo" id="data">
+		<label for="{$data.voter_id}">{$data.name}<span class="ui-li-count">{$data.count}</span></label>
+		<input type="radio" name="project_vote[{$count}]" id="{$data.voter_id}" value="{$data.voter_id}" data-theme="a">
+		</volist>
+		</fieldset>
+	  <php>$count++;$themeid++;</php>
+	  </volist>
+	  <div style="text-align:center;">
+	  <br/><br/>
+      <input type="submit" data-inline="false" id="btn_post" value="提交" on-clic>
+      <input type="hidden" id="openid" name="openid" value="{$groupname.openid}">
+	  </div>
+	  <br /><br /><br />
+    </form>
+	<include file="Public/support"/>
+	</div>
+	<include file="Public/footer" footbut="2"/>
+  </div>
+
+	<!-- 第三页 -->
+	<include file="Index/rule"/>
+  </body>
+</html>
